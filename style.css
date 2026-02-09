@@ -326,6 +326,30 @@ body {
     font-style: italic;
 }
 
+.education-details {
+    margin-top: var(--space-sm);
+    padding-top: var(--space-sm);
+    border-top: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.education-details p {
+    margin-bottom: var(--space-xs);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.university-highlight {
+    margin-top: var(--space-sm);
+    padding: var(--space-sm);
+    background: rgba(79, 172, 254, 0.08);
+    border-left: 2px solid var(--accent);
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+
 /* ========================================
    Skills Section
    ======================================== */
