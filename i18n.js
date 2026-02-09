@@ -20,7 +20,7 @@ const translations = {
         aboutText: 'Dynamic Computer Engineering student with a strong foundation in software development and a passion for emerging technologies. Adept at leveraging AI tools and modern development practices to build efficient solutions. Multilingual professional with excellent communication skills and a proven track record of academic excellence.',
 
         // Education - Yildiz Technical University
-        eduYtu Title: 'B.S. in Computer Engineering',
+        eduYtuTitle: 'B.S. in Computer Engineering',
         eduYtuInstitution: 'Yildiz Technical University • Istanbul, Turkey',
         eduYtuBadge: '2024 - 2028',
         eduYtuStatusLabel: 'Status',
