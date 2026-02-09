@@ -22,10 +22,12 @@ class ParticleSystem {
         this.resize();
         window.addEventListener('resize', () => this.resize());
 
-        // Track mouse movement
+        // Track mouse movement - fixed to track actual cursor position
         document.addEventListener('mousemove', (e) => {
+            // Get canvas position
+            const rect = this.canvas.getBoundingClientRect();
             this.mouse.x = e.clientX;
-            this.mouse.y = e.clientY + window.scrollY;
+            this.mouse.y = e.clientY;
         });
 
         // Create particles
