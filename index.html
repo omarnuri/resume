@@ -4,8 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Omar Nuriyev - Computer Engineering Student & Software Developer">
-    <title>Omar Nuriyev - Resume</title>
+    <meta name="description"
+        content="Omar Nuriyev - Computer Engineering Student at Yildiz Technical University & Software Developer specializing in .NET, AI-assisted development. Multilingual professional fluent in 4 languages.">
+    <meta name="keywords"
+        content="Omar Nuriyev, Software Engineer, Computer Engineering, Yildiz Technical University, .NET Developer, AI Development">
+    <meta name="author" content="Omar Nuriyev">
+    <meta property="og:title" content="Omar Nuriyev | Software Engineer">
+    <meta property="og:description" content="Computer Engineering Student & Software Developer">
+    <meta property="og:type" content="website">
+    <title>Omar Nuriyev | Software Engineer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,27 +27,34 @@
                 <div class="avatar">ON</div>
                 <div class="header-text">
                     <h1 class="name">Omar Nuriyev</h1>
-                    <p class="title">Computer Engineering Student & Software Developer</p>
+                    <p class="title" data-i18n="title">Computer Engineering Student & Software Developer</p>
                 </div>
             </div>
 
             <div class="contact-grid">
                 <div class="contact-item">
-                    <span class="contact-label">Email:</span>
+                    <span class="contact-label" data-i18n="emailLabel">Email:</span>
                     <a href="mailto:omarkifanuri@gmail.com">omarkifanuri@gmail.com</a>
                 </div>
                 <div class="contact-item">
-                    <span class="contact-label">GitHub:</span>
+                    <span class="contact-label" data-i18n="githubLabel">GitHub:</span>
                     <a href="https://github.com/omarnuri" target="_blank">github.com/omarnuri</a>
                 </div>
                 <div class="contact-item">
-                    <span class="contact-label">Location:</span>
+                    <span class="contact-label" data-i18n="locationLabel">Location:</span>
                     <span>Istanbul, Turkey</span>
                 </div>
                 <div class="contact-item">
-                    <span class="contact-label">Born:</span>
+                    <span class="contact-label" data-i18n="bornLabel">Born:</span>
                     <span>June 22, 2006</span>
                 </div>
+            </div>
+
+            <!-- Language Switcher -->
+            <div class="language-switcher">
+                <button class="lang-btn" data-lang="en" aria-label="English">EN</button>
+                <button class="lang-btn" data-lang="ru" aria-label="Русский">RU</button>
+                <button class="lang-btn" data-lang="tr" aria-label="Türkçe">TR</button>
             </div>
         </header>
 
@@ -48,9 +62,9 @@
         <main class="main-content">
             <!-- About Section -->
             <section class="section">
-                <h2 class="section-title">About Me</h2>
+                <h2 class="section-title" data-i18n="aboutTitle">About Me</h2>
                 <div class="card">
-                    <p class="about-text">
+                    <p class="about-text" data-i18n="aboutText">
                         Dynamic Computer Engineering student with a strong foundation in software development and a
                         passion for emerging technologies.
                         Adept at leveraging AI tools and modern development practices to build efficient solutions.
@@ -62,7 +76,7 @@
 
             <!-- Education Section -->
             <section class="section">
-                <h2 class="section-title">Education</h2>
+                <h2 class="section-title" data-i18n="educationTitle">Education</h2>
                 <div class="card">
                     <div class="education-item">
                         <div class="education-header">
@@ -96,16 +110,28 @@
                         <p class="education-description">Comprehensive software development training program covering
                             modern programming practices and technologies</p>
                     </div>
+
+                    <div class="education-item">
+                        <div class="education-header">
+                            <div>
+                                <h3 class="education-title">Secondary School Diploma</h3>
+                                <p class="institution">School #100 • Baku, Azerbaijan</p>
+                            </div>
+                            <span class="badge badge-completed">2012 - 2024</span>
+                        </div>
+                        <p class="education-description">Completed comprehensive secondary education with strong focus
+                            on mathematics and sciences</p>
+                    </div>
                 </div>
             </section>
 
             <!-- Technical Skills Section -->
             <section class="section">
-                <h2 class="section-title">Technical Skills</h2>
+                <h2 class="section-title" data-i18n="skillsTitle">Technical Skills</h2>
                 <div class="card">
                     <div class="skills-section">
                         <div class="skill-group">
-                            <h3 class="skill-group-title">Core Languages</h3>
+                            <h3 class="skill-group-title" data-i18n="skillsCoreTitle">Core Languages</h3>
                             <div class="skill-tags">
                                 <span class="skill-tag skill-primary">C#</span>
                                 <span class="skill-tag skill-primary">Java</span>
@@ -139,7 +165,7 @@
 
             <!-- Languages Section -->
             <section class="section">
-                <h2 class="section-title">Languages</h2>
+                <h2 class="section-title" data-i18n="languagesTitle">Languages</h2>
                 <div class="card">
                     <div class="languages-grid">
                         <div class="language-item">
@@ -188,7 +214,7 @@
 
             <!-- Certifications Section -->
             <section class="section">
-                <h2 class="section-title">Certifications & Achievements</h2>
+                <h2 class="section-title" data-i18n="certificationsTitle">Certifications & Achievements</h2>
                 <div class="card">
                     <div class="cert-list">
                         <div class="cert-item">
@@ -220,7 +246,7 @@
 
             <!-- Experience Section -->
             <section class="section">
-                <h2 class="section-title">Experience & Expertise</h2>
+                <h2 class="section-title" data-i18n="experienceTitle">Experience & Expertise</h2>
                 <div class="card">
                     <div class="experience-item">
                         <h3 class="experience-title">AI-Augmented Development</h3>
@@ -259,6 +285,10 @@
             <p>© 2026 Omar Nuriyev</p>
         </footer>
     </div>
+
+    <!-- Scripts -->
+    <script src="particles.js"></script>
+    <script src="i18n.js"></script>
 </body>
 
 </html>
