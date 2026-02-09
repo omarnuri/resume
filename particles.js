@@ -1,14 +1,19 @@
-// Cursor-following particle system
+// Simple Subtle Particle System
 class ParticleSystem {
     constructor() {
         this.canvas = document.getElementById('particles-canvas');
-        if (!this.canvas) return;
+        if (!this.canvas) {
+            this.canvas = document.createElement('canvas');
+            this.canvas.id = 'particles-canvas';
+            this.canvas.className = 'particles-canvas';
+            document.body.insertBefore(this.canvas, document.body.firstChild);
+        }
 
         this.ctx = this.canvas.getContext('2d');
         this.particles = [];
         this.mouse = { x: 0, y: 0 };
-        this.maxParticles = 80;
-        this.colors = ['#667eea', '#764ba2', '#4facfe', '#00f2fe', '#43e97b'];
+        this.maxParticles = 30; // Less particles
+        this.colors = ['#3498db', '#2c3e50']; // Simple colors only
 
         this.init();
     }
@@ -18,7 +23,7 @@ class ParticleSystem {
         window.addEventListener('resize', () => this.resize());
         window.addEventListener('mousemove', (e) => this.updateMouse(e));
 
-        // Create initial particles
+        // Create particles
         for (let i = 0; i < this.maxParticles; i++) {
             this.particles.push(this.createParticle());
         }
@@ -36,38 +41,34 @@ class ParticleSystem {
         this.mouse.y = e.clientY + window.scrollY;
     }
 
-    createParticle(x = null, y = null) {
+    createParticle() {
         return {
-            x: x !== null ? x : Math.random() * this.canvas.width,
-            y: y !== null ? y : Math.random() * this.canvas.height,
-            vx: (Math.random() - 0.5) * 1,
-            vy: (Math.random() - 0.5) * 1,
+            x: Math.random() * this.canvas.width,
+            y: Math.random() * this.canvas.height,
+            vx: (Math.random() - 0.5) * 0.5,
+            vy: (Math.random() - 0.5) * 0.5,
             radius: Math.random() * 2 + 1,
             color: this.colors[Math.floor(Math.random() * this.colors.length)],
-            alpha: Math.random() * 0.5 + 0.3,
-            life: 1
+            alpha: Math.random() * 0.3 + 0.2
         };
     }
 
     animate() {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-        // Update and draw particles
-        this.particles.forEach((particle, index) => {
-            // Calculate distance to mouse
+        this.particles.forEach((particle) => {
             const dx = this.mouse.x - particle.x;
             const dy = this.mouse.y - particle.y;
             const distance = Math.sqrt(dx * dx + dy * dy);
-            const maxDistance = 150;
 
-            // Apply attraction force when close to mouse
-            if (distance < maxDistance) {
-                const force = (maxDistance - distance) / maxDistance;
-                particle.vx += (dx / distance) * force * 0.2;
-                particle.vy += (dy / distance) * force * 0.2;
+            // Very gentle attraction
+            if (distance < 150) {
+                const force = (150 - distance) / 150;
+                particle.vx += (dx / distance) * force * 0.1;
+                particle.vy += (dy / distance) * force * 0.1;
             }
 
-            // Apply friction
+            // Gentle friction
             particle.vx *= 0.95;
             particle.vy *= 0.95;
 
@@ -77,37 +78,35 @@ class ParticleSystem {
 
             // Bounce off edges
             if (particle.x < 0 || particle.x > this.canvas.width) {
-                particle.vx *= -0.5;
+                particle.vx *= -1;
                 particle.x = Math.max(0, Math.min(this.canvas.width, particle.x));
             }
             if (particle.y < 0 || particle.y > this.canvas.height) {
-                particle.vy *= -0.5;
+                particle.vy *= -1;
                 particle.y = Math.max(0, Math.min(this.canvas.height, particle.y));
             }
 
-            // Draw particle
+            // Draw particle - simple circle
             this.ctx.globalAlpha = particle.alpha;
             this.ctx.fillStyle = particle.color;
             this.ctx.beginPath();
             this.ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
             this.ctx.fill();
 
-            // Draw connections to nearby particles
-            this.particles.forEach((otherParticle, otherIndex) => {
-                if (index !== otherIndex) {
-                    const pdx = particle.x - otherParticle.x;
-                    const pdy = particle.y - otherParticle.y;
-                    const pdistance = Math.sqrt(pdx * pdx + pdy * pdy);
+            // Simple connections - very subtle
+            this.particles.forEach((other) => {
+                const dx2 = particle.x - other.x;
+                const dy2 = particle.y - other.y;
+                const dist = Math.sqrt(dx2 * dx2 + dy2 * dy2);
 
-                    if (pdistance < 100) {
-                        this.ctx.globalAlpha = (1 - pdistance / 100) * 0.2;
-                        this.ctx.strokeStyle = particle.color;
-                        this.ctx.lineWidth = 0.5;
-                        this.ctx.beginPath();
-                        this.ctx.moveTo(particle.x, particle.y);
-                        this.ctx.lineTo(otherParticle.x, otherParticle.y);
-                        this.ctx.stroke();
-                    }
+                if (dist < 100) {
+                    this.ctx.globalAlpha = (1 - dist / 100) * 0.15;
+                    this.ctx.strokeStyle = particle.color;
+                    this.ctx.lineWidth = 0.5;
+                    this.ctx.beginPath();
+                    this.ctx.moveTo(particle.x, particle.y);
+                    this.ctx.lineTo(other.x, other.y);
+                    this.ctx.stroke();
                 }
             });
         });
@@ -117,57 +116,7 @@ class ParticleSystem {
     }
 }
 
-// Mouse trail effect
-class MouseTrail {
-    constructor() {
-        this.trail = [];
-        this.maxTrail = 20;
-
-        document.addEventListener('mousemove', (e) => {
-            this.trail.push({
-                x: e.clientX,
-                y: e.clientY + window.scrollY,
-                time: Date.now()
-            });
-
-            if (this.trail.length > this.maxTrail) {
-                this.trail.shift();
-            }
-        });
-    }
-
-    draw(ctx) {
-        const now = Date.now();
-        this.trail.forEach((point, index) => {
-            const age = now - point.time;
-            const maxAge = 500;
-            if (age < maxAge) {
-                const alpha = 1 - (age / maxAge);
-                const size = 3 + index * 0.2;
-
-                const gradient = ctx.createRadialGradient(point.x, point.y, 0, point.x, point.y, size);
-                gradient.addColorStop(0, `rgba(102, 126, 234, ${alpha * 0.6})`);
-                gradient.addColorStop(1, `rgba(102, 126, 234, 0)`);
-
-                ctx.fillStyle = gradient;
-                ctx.beginPath();
-                ctx.arc(point.x, point.y, size, 0, Math.PI * 2);
-                ctx.fill();
-            }
-        });
-    }
-}
-
-// Initialize when DOM is ready
+// Initialize on load
 document.addEventListener('DOMContentLoaded', () => {
-    // Create canvas if it doesn't exist
-    if (!document.getElementById('particles-canvas')) {
-        const canvas = document.createElement('canvas');
-        canvas.id = 'particles-canvas';
-        canvas.className = 'particles-canvas';
-        document.body.insertBefore(canvas, document.body.firstChild);
-    }
-
     window.particleSystem = new ParticleSystem();
-    window.mouseTrail = new MouseTrail();
 });

@@ -1,12 +1,12 @@
-// Multilingual Support System
+// Comprehensive Multilingual Support System - Complete Edition
 const translations = {
     en: {
         // Header
         title: 'Computer Engineering Student & Software Developer',
-        emailLabel: 'Email:',
-        githubLabel: 'GitHub:',
-        locationLabel: 'Location:',
-        bornLabel: 'Born:',
+        emailLabel: 'Email',
+        githubLabel: 'GitHub',
+        locationLabel: 'Location',
+        bornLabel: 'Born',
 
         // Sections
         aboutTitle: 'About Me',
@@ -19,23 +19,27 @@ const translations = {
         // About
         aboutText: 'Dynamic Computer Engineering student with a strong foundation in software development and a passion for emerging technologies. Adept at leveraging AI tools and modern development practices to build efficient solutions. Multilingual professional with excellent communication skills and a proven track record of academic excellence.',
 
-        // Education
-        eduYtuTitle: 'B.S. in Computer Engineering',
+        // Education - Yildiz Technical University
+        eduYtu Title: 'B.S. in Computer Engineering',
         eduYtuInstitution: 'Yildiz Technical University • Istanbul, Turkey',
-        eduYtuStatus: 'Status:',
+        eduYtuBadge: '2024 - 2028',
+        eduYtuStatusLabel: 'Status',
         eduYtuStatusValue: '2nd Year, 2nd Semester',
-        eduYtuProgram: 'Program:',
+        eduYtuProgramLabel: 'Program',
         eduYtuProgramValue: 'Computer Engineering (4-year Bachelor\'s program)',
         eduYtuHighlight: 'One of Istanbul\'s premier technical universities, renowned for its engineering programs and consistently ranked among Turkey\'s top institutions for Computer Science and Engineering education.',
         eduYtuNote: 'Admitted through ACT certification with near-maximum score',
 
+        // Education - Step IT Academy
         eduStepTitle: 'Software Development Certificate',
         eduStepInstitution: 'Step IT Academy',
         eduStepBadge: 'Completed',
         eduStepDesc: 'Comprehensive software development training program covering modern programming practices and technologies',
 
+        // Education - School #100
         eduSchoolTitle: 'Secondary School Diploma',
         eduSchoolInstitution: 'School #100 • Baku, Azerbaijan',
+        eduSchoolBadge: '2012 - 2024',
         eduSchoolDesc: 'Completed comprehensive secondary education with strong focus on mathematics and sciences',
 
         // Skills
@@ -57,19 +61,21 @@ const translations = {
         certActTitle: 'ACT Certification',
         certActDesc: 'Near-maximum score for university admission',
 
-        // Experience
+        // Experience - AI
         expAiTitle: 'AI-Augmented Development',
         expAi1: 'Professional prompt engineering for code generation and optimization',
         expAi2: 'Advanced debugging and code review of AI-generated solutions',
         expAi3: 'Efficient integration and customization of AI-assisted code',
         expAi4: 'Rapid prototyping using contemporary AI development tools',
 
+        // Experience - .NET
         expDotnetTitle: '.NET Ecosystem Development',
         expDotnet1: 'Desktop application development using WPF and WinForms',
         expDotnet2: 'Database integration with ADO.NET',
         expDotnet3: 'Cross-platform mobile development with Xamarin',
         expDotnet4: 'Modern web services using .NET Core',
 
+        // Experience - Learning
         expLearningTitle: 'Continuous Learning & Technology Exploration',
         expLearning1: 'Experimental work with various programming languages and frameworks',
         expLearning2: 'Adaptation to rapidly evolving AI-driven development landscape',
@@ -82,10 +88,10 @@ const translations = {
     ru: {
         // Header
         title: 'Студент компьютерной инженерии и разработчик ПО',
-        emailLabel: 'Email:',
-        githubLabel: 'GitHub:',
-        locationLabel: 'Местоположение:',
-        bornLabel: 'Дата рождения:',
+        emailLabel: 'Email',
+        githubLabel: 'GitHub',
+        locationLabel: 'Местоположение',
+        bornLabel: 'Дата рождения',
 
         // Sections
         aboutTitle: 'Обо мне',
@@ -96,25 +102,29 @@ const translations = {
         experienceTitle: 'Опыт и экспертиза',
 
         // About
-        aboutText: 'Динамичный студент компьютерной инженерии с прочной основой в разработке программного обеспечения и страстью к новым технологиям. Умею использовать инструменты ИИ и современные методы разработки для создания эффективных решений. Многоязычный профессионал с отличными коммуникативными навыками и доказанным успехом в учебе.',
+        aboutText: 'Динамичный студент компьютерной инженерии с прочной основой в разработке ПО и страстью к новым технологиям. Умею использовать инструменты ИИ и современные методы разработки для создания эффективных решений. Многоязычный профессионал с отличными коммуникативными навыками и доказанным успехом в учебе.',
 
-        // Education
+        // Education - Yildiz
         eduYtuTitle: 'Бакалавр компьютерной инженерии',
         eduYtuInstitution: 'Йылдыз Технический Университет • Стамбул, Турция',
-        eduYtuStatus: 'Статус:',
+        eduYtuBadge: '2024 - 2028',
+        eduYtuStatusLabel: 'Статус',
         eduYtuStatusValue: '2 курс, 2 семестр',
-        eduYtuProgram: 'Программа:',
+        eduYtuProgramLabel: 'Программа',
         eduYtuProgramValue: 'Компьютерная инженерия (4-летняя программа бакалавриата)',
-        eduYtuHighlight: 'Один из ведущих технических университетов Стамбула, известный своими инженерными программами и стабильно входящий в число лучших учебных заведений Турции по компьютерным наукам и инженерии.',
-        eduYtuNote: 'Поступил через сертификацию ACT с почти максимальным баллом',
+        eduYtuHighlight: 'Один из ведущих технических университетов Стамбула, известный инженерными программами и стабильно входящий в число лучших учебных заведений Турции по компьютерным наукам и инженерии.',
+        eduYtuNote: 'Поступил по сертификации ACT с почти максимальным баллом',
 
+        // Education - Step IT
         eduStepTitle: 'Сертификат разработчика ПО',
         eduStepInstitution: 'Step IT Academy',
         eduStepBadge: 'Завершено',
-        eduStepDesc: 'Всестороннее обучение разработке ПО с изучением современных методов программирования и технологий',
+        eduStepDesc: 'Всестороннее обучение разработке ПО с изучением современных методов программирования',
 
+        // Education - School
         eduSchoolTitle: 'Аттестат средней школы',
         eduSchoolInstitution: 'Школа №100 • Баку, Азербайджан',
+        eduSchoolBadge: '2012 - 2024',
         eduSchoolDesc: 'Полное среднее образование с акцентом на математику и естественные науки',
 
         // Skills
@@ -136,22 +146,24 @@ const translations = {
         certActTitle: 'Сертификация ACT',
         certActDesc: 'Почти максимальный балл для поступления в университет',
 
-        // Experience
+        // Experience - AI
         expAiTitle: 'Разработка с использованием ИИ',
         expAi1: 'Профессиональная промпт-инженерия для генерации и оптимизации кода',
         expAi2: 'Продвинутая отладка и код-ревью ИИ-сгенерированных решений',
         expAi3: 'Эффективная интеграция и кастомизация ИИ-ассистированного кода',
-        expAi4: 'Быстрое прототипирование с использованием современных ИИ-инструментов',
+        expAi4: 'Быстрое прототипирование с современными ИИ-инструментами',
 
+        // Experience - .NET
         expDotnetTitle: 'Разработка в экосистеме .NET',
         expDotnet1: 'Разработка десктопных приложений на WPF и WinForms',
         expDotnet2: 'Интеграция баз данных с ADO.NET',
         expDotnet3: 'Кросс-платформенная мобильная разработка на Xamarin',
         expDotnet4: 'Современные веб-сервисы на .NET Core',
 
+        // Experience - Learning
         expLearningTitle: 'Непрерывное обучение и исследование технологий',
         expLearning1: 'Экспериментальная работа с различными языками программирования и фреймворками',
-        expLearning2: 'Адаптация к быстро развивающемуся ландшафту разработки на основе ИИ',
+        expLearning2: 'Адаптация к быстро развивающемуся ландшафту ИИ-разработки',
         expLearning3: 'Самостоятельное обучение и оценка технологий',
 
         // Footer
@@ -161,10 +173,10 @@ const translations = {
     tr: {
         // Header
         title: 'Bilgisayar Mühendisliği Öğrencisi ve Yazılım Geliştirici',
-        emailLabel: 'E-posta:',
-        githubLabel: 'GitHub:',
-        locationLabel: 'Konum:',
-        bornLabel: 'Doğum:',
+        emailLabel: 'E-posta',
+        githubLabel: 'GitHub',
+        locationLabel: 'Konum',
+        bornLabel: 'Doğum',
 
         // Sections
         aboutTitle: 'Hakkımda',
@@ -177,23 +189,27 @@ const translations = {
         // About
         aboutText: 'Yazılım geliştirmede güçlü temellere ve gelişen teknolojilere tutkuyla sahip dinamik Bilgisayar Mühendisliği öğrencisi. Verimli çözümler oluşturmak için yapay zeka araçlarını ve modern geliştirme uygulamalarını kullanmada yetenekli. Mükemmel iletişim becerileri ve kanıtlanmış akademik başarı geçmişi olan çok dilli profesyonel.',
 
-        // Education
+        // Education - Yıldız
         eduYtuTitle: 'Bilgisayar Mühendisliği Lisans',
         eduYtuInstitution: 'Yıldız Teknik Üniversitesi • İstanbul, Türkiye',
-        eduYtuStatus: 'Durum:',
+        eduYtuBadge: '2024 - 2028',
+        eduYtuStatusLabel: 'Durum',
         eduYtuStatusValue: '2. Sınıf, 2. Dönem',
-        eduYtuProgram: 'Program:',
+        eduYtuProgramLabel: 'Program',
         eduYtuProgramValue: 'Bilgisayar Mühendisliği (4 yıllık lisans programı)',
-        eduYtuHighlight: 'İstanbul\'un önde gelen teknik üniversitelerinden biri, mühendislik programları ile ünlü ve Bilgisayar Bilimi ve Mühendislik eğitiminde Türkiye\'nin en iyi kurumları arasında sürekli olarak yer alıyor.',
+        eduYtuHighlight: 'İstanbul\'un önde gelen teknik üniversitelerinden biri, mühendislik programları ile ünlü ve Bilgisayar Bilimi ve Mühendislik eğitiminde Türkiye\'nin en iyi kurumları arasında sürekli yer alıyor.',
         eduYtuNote: 'Neredeyse maksimum puanla ACT sertifikası ile kabul edildi',
 
+        // Education - Step IT
         eduStepTitle: 'Yazılım Geliştirme Sertifikası',
         eduStepInstitution: 'Step IT Academy',
         eduStepBadge: 'Tamamlandı',
         eduStepDesc: 'Modern programlama uygulamaları ve teknolojilerini kapsayan kapsamlı yazılım geliştirme eğitim programı',
 
+        // Education - School
         eduSchoolTitle: 'Lise Diploması',
         eduSchoolInstitution: '100 Numaralı Okul • Bakü, Azerbaycan',
+        eduSchoolBadge: '2012 - 2024',
         eduSchoolDesc: 'Matematik ve fen bilimlerine güçlü odaklanarak kapsamlı lise eğitimi tamamlandı',
 
         // Skills
@@ -215,19 +231,21 @@ const translations = {
         certActTitle: 'ACT Sertifikasyonu',
         certActDesc: 'Üniversiteye giriş için neredeyse maksimum puan',
 
-        // Experience
+        // Experience - AI
         expAiTitle: 'Yapay Zeka Destekli Geliştirme',
         expAi1: 'Kod üretimi ve optimizasyonu için profesyonel prompt mühendisliği',
         expAi2: 'Yapay zeka tarafından üretilen çözümlerin gelişmiş hata ayıklama ve kod incelemesi',
         expAi3: 'Yapay zeka destekli kodun verimli entegrasyonu ve özelleştirmesi',
         expAi4: 'Çağdaş yapay zeka geliştirme araçları kullanarak hızlı prototipleme',
 
+        // Experience - .NET
         expDotnetTitle: '.NET Ekosistemi Geliştirme',
         expDotnet1: 'WPF ve WinForms kullanarak masaüstü uygulama geliştirme',
         expDotnet2: 'ADO.NET ile veritabanı entegrasyonu',
         expDotnet3: 'Xamarin ile çapraz platform mobil geliştirme',
         expDotnet4: '.NET Core kullanarak modern web servisleri',
 
+        // Experience - Learning
         expLearningTitle: 'Sürekli Öğrenme ve Teknoloji Keşfi',
         expLearning1: 'Çeşitli programlama dilleri ve framework\'ler ile deneysel çalışmalar',
         expLearning2: 'Hızla gelişen yapay zeka tabanlı geliştirme ortamına adaptasyon',
@@ -238,7 +256,7 @@ const translations = {
     }
 };
 
-// Language detection and management
+// Language Management Class
 class I18n {
     constructor() {
         this.currentLang = this.detectLanguage();
@@ -246,17 +264,13 @@ class I18n {
     }
 
     detectLanguage() {
-        // Check localStorage first
         const saved = localStorage.getItem('preferredLanguage');
-        if (saved && translations[saved]) {
-            return saved;
-        }
+        if (saved && translations[saved]) return saved;
 
-        // Detect from browser
         const browserLang = navigator.language.toLowerCase();
         if (browserLang.startsWith('tr')) return 'tr';
         if (browserLang.startsWith('ru')) return 'ru';
-        return 'en'; // Default to English
+        return 'en';
     }
 
     init() {
@@ -268,7 +282,6 @@ class I18n {
     translate() {
         const t = translations[this.currentLang];
 
-        // Update all elements with data-i18n attribute
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.getAttribute('data-i18n');
             if (t[key]) {
@@ -276,7 +289,6 @@ class I18n {
             }
         });
 
-        // Update HTML lang attribute
         document.documentElement.lang = this.currentLang;
     }
 
@@ -290,7 +302,6 @@ class I18n {
     }
 
     updateLanguageSelector() {
-        // Update active state in language selector
         document.querySelectorAll('.lang-btn').forEach(btn => {
             btn.classList.toggle('active', btn.dataset.lang === this.currentLang);
         });
@@ -306,7 +317,7 @@ class I18n {
     }
 }
 
-// Initialize i18n when DOM is ready
+// Initialize
 document.addEventListener('DOMContentLoaded', () => {
     window.i18n = new I18n();
 });
